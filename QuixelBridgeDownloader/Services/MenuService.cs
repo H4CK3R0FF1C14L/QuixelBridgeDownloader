@@ -140,6 +140,8 @@ namespace QuixelBridgeDownloader.Services
                     if (item.IsSendedFirstMessage && item.IsSendedSecondMessage)
                         continue;
 
+                    Directory.CreateDirectory(_tempFolder);
+
                     ClearTempFolder();
 
                     Asset? asset = await _quixelService.GetItemAsync(item.QuixelId!);
