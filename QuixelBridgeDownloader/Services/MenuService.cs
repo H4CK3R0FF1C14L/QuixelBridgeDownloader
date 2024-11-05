@@ -159,8 +159,8 @@ namespace QuixelBridgeDownloader.Services
 
                     string message = $"Asset: {asset!.Name}{Environment.NewLine}" +
                                      $"Asset ID: https://quixel.com/assets/{asset.Id}{Environment.NewLine}" +
-                                     $"{categoriesHashtags}{Environment.NewLine}" +
-                                     $"{tagsHashtags}";
+                                     $"{categoriesHashtags.Replace("-", "_").Replace(" ", "_").Replace("_#", " #")}{Environment.NewLine}" +
+                                     $"{tagsHashtags.Replace("-", "_").Replace(" ", "_").Replace("_#", " #")}";
 
                     if (!item.IsSendedFirstMessage)
                     {
